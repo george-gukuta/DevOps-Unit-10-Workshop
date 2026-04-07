@@ -33,7 +33,7 @@ def process_orders(app):
             app.config["FINANCE_PACKAGE_URL"] + "/ProcessPayment",
             json=payload
         )
-
+        app.logger.info("Response on line 36 from endpoint: " + response.text)
         app.logger.info("Response from endpoint: " + response.text)
         response.raise_for_status()
 
